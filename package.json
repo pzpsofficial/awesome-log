@@ -1,0 +1,20 @@
+{
+  "name": "awesome-log",
+  "version": "1.0.0",
+  "description": "Fall in love with your console",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "author": "Bartosz Karpiel",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "husky": "^6.0.0"
+  }
+}
