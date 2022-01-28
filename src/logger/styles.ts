@@ -45,7 +45,15 @@ export const ErrorHeadingStyle: Styles = [
     'border-bottom: 2px solid maroon',
 ];
 
-export const GreetStyle: Styles = [...BaseStyles];
+export const GreetStyle: Styles = [
+    ...BaseStyles,
+    'line-height: 150px',
+    'background-image: url(https://source.unsplash.com/random)',
+    'background-position: center',
+    'background-repeat: no-repeat',
+    'background-size: cover',
+    'color: transparent',
+];
 
 export const LogStyle: Styles = [...BaseStyles];
 

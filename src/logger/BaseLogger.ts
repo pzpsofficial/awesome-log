@@ -62,7 +62,7 @@ export class BaseLogger {
     }
 
     greet<T>(data: T, heading: BaseHeading = 'Hello'): void {
-        this.baseLog(data, GreetStyle, heading, GreetHeadingStyle);
+        this.baseLog('-------------------------', GreetStyle, heading, GreetHeadingStyle);
     }
 
     log<T>(data: T, heading: BaseHeading = 'Info'): void {
