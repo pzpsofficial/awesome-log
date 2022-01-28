@@ -1,1 +1,1 @@
-console.log('elo');
+export * from './logger';
