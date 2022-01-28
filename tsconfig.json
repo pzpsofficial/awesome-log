@@ -9,7 +9,7 @@
 		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators": true,
 		"lib": ["dom", "es6", "ESNext"],
-		"baseUrl": "."
+		"baseUrl": "./src"
 	},
 	"include": [
 		"src/**/*"
