@@ -9,3 +9,7 @@ export type OnMounted = () => void;
 export type LifecycleHooks = {
     onMounted: OnMounted | undefined;
 };
+
+export type Styles = string | string[];
+
+export type BaseHeading = 'Hello' | 'Info' | 'Warning' | 'Error';

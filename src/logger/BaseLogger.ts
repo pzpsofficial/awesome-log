@@ -1,4 +1,15 @@
-import { Config, LifecycleHooks } from './types';
+import {
+    BaseHeadingStyles,
+    ErrorHeadingStyle,
+    ErrorStyle,
+    GreetHeadingStyle,
+    GreetStyle,
+    LogHeadingStyle,
+    LogStyle,
+    WarningHeadingStyle,
+    WarnStyle,
+} from './styles';
+import { BaseHeading, Config, LifecycleHooks, Styles } from './types';
 
 export class BaseLogger {
     private readonly config: Config = {
@@ -18,26 +29,51 @@ export class BaseLogger {
         }
     }
 
-    onMounted() {
+    protected onMounted() {
         if (this.config.name) console.log(`Hello ${this.config.name}`);
         if (this.config.organization) console.log(`Hope ${this.config.organization} is doing well`);
         if (this.config.componentName)
             console.log(`Hope ${this.config.componentName} will work like a charm`);
     }
 
-    greet<T>(data: T): void {
-        console.log(data);
+    private baseLog<T>(
+        data: T,
+        styles: Styles,
+        heading?: string,
+        headingStyles: Styles = BaseHeadingStyles
+    ) {
+        console.log(
+            `%c${heading + '\n'}%c ${data}`,
+            this.resolveStyles(headingStyles),
+            this.resolveStyles(styles)
+        );
     }
 
-    log<T>(data: T) {
-        console.log(data);
+    private resolveDataType<T>(data: T) {
+        console.log('Siema');
     }
 
-    warn<T>(data: T) {
-        console.warn(data);
+    private resolveStyles(styles: Styles): string {
+        if (typeof styles === 'object') {
+            return styles.join(';');
+        }
+
+        return styles;
     }
 
-    error<T>(data: T) {
-        console.error(data);
+    greet<T>(data: T, heading: BaseHeading = 'Hello'): void {
+        this.baseLog(data, GreetStyle, heading, GreetHeadingStyle);
+    }
+
+    log<T>(data: T, heading: BaseHeading = 'Info'): void {
+        this.baseLog(data, LogStyle, heading, LogHeadingStyle);
+    }
+
+    warn<T>(data: T, heading: BaseHeading = 'Warning'): void {
+        this.baseLog(data, WarnStyle, heading, WarningHeadingStyle);
+    }
+
+    error<T>(data: T, heading: BaseHeading = 'Error'): void {
+        this.baseLog(data, ErrorStyle, heading, ErrorHeadingStyle);
     }
 }
