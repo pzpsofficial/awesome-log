@@ -47,12 +47,13 @@ export const ErrorHeadingStyle: Styles = [
 
 export const GreetStyle: Styles = [
     ...BaseStyles,
-    'line-height: 150px',
-    'background-image: url(https://source.unsplash.com/random)',
+    'padding: 100px 10px',
+    'background-image: url(https://source.unsplash.com/random/?programming,terminal)',
     'background-position: center',
     'background-repeat: no-repeat',
     'background-size: cover',
-    'color: transparent',
+    'font-size: 16px',
+    'text-shadow: 2px 2px 2px #000',
 ];
 
 export const LogStyle: Styles = [...BaseStyles];

@@ -12,6 +12,8 @@ import {
 import { BaseHeading, Config, LifecycleHooks, Styles } from './types';
 
 export class BaseLogger {
+    static hasGreeted = false;
+
     private readonly config: Config = {
         name: '',
         organization: '',
@@ -30,10 +32,7 @@ export class BaseLogger {
     }
 
     protected onMounted() {
-        if (this.config.name) console.log(`Hello ${this.config.name}`);
-        if (this.config.organization) console.log(`Hope ${this.config.organization} is doing well`);
-        if (this.config.componentName)
-            console.log(`Hope ${this.config.componentName} will work like a charm`);
+        this.greet();
     }
 
     private baseLog<T>(
@@ -42,11 +41,10 @@ export class BaseLogger {
         heading?: string,
         headingStyles: Styles = BaseHeadingStyles
     ) {
-        console.log(
-            `%c${heading + '\n'}%c ${data}`,
-            this.resolveStyles(headingStyles),
-            this.resolveStyles(styles)
-        );
+        if (heading) {
+            console.log(`%c${heading}`, this.resolveStyles(headingStyles));
+        }
+        console.log(`%c${data}`, this.resolveStyles(styles));
     }
 
     private resolveDataType<T>(data: T) {
@@ -61,8 +59,23 @@ export class BaseLogger {
         return styles;
     }
 
-    greet<T>(data: T, heading: BaseHeading = 'Hello'): void {
-        this.baseLog('-------------------------', GreetStyle, heading, GreetHeadingStyle);
+    private get getConsoleWidth() {
+        return window.screen.availWidth - document.body.clientWidth;
+    }
+
+    private greet(): void {
+        const heading = 'Hello, ' + (this.config.name ?? 'our awesome user') + '!';
+        let data = '';
+
+        if (this.config.organization) {
+            data += `We hope you are having a great time in ${this.config.organization}! `;
+        }
+
+        if (this.config.componentName) {
+            data += `Fingers crossed your ${this.config.componentName} component will work like a charm!`;
+        }
+
+        this.baseLog(data, GreetStyle, heading, GreetHeadingStyle);
     }
 
     log<T>(data: T, heading: BaseHeading = 'Info'): void {

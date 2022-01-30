@@ -12,4 +12,4 @@ export type LifecycleHooks = {
 
 export type Styles = string | string[];
 
-export type BaseHeading = 'Hello' | 'Info' | 'Warning' | 'Error';
+export type BaseHeading = 'Hello' | 'Info' | 'Warning' | 'Error' | string;
