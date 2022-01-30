@@ -7,3 +7,5 @@ commitlint.config.js
 tsconfig.json
 src/
 playground/
+*.ts
+!*.d.ts

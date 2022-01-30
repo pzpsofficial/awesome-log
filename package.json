@@ -1,8 +1,9 @@
 {
     "name": "bk-awesome-log",
-    "version": "1.0.2",
+    "version": "1.0.6",
     "description": "Fall in love with your console",
-    "main": "dist/index.js",
+    "main": "src/index.js",
+    "types": "src/index.d.ts",
     "directories": {
         "doc": "docs"
     },
@@ -12,7 +13,7 @@
         "stylelint": "stylelint src/**/*.scss --fix",
         "test": "echo \"No test specified\"",
         "prepare": "husky install",
-        "build": "tsc src/index.ts --outDir dist"
+        "build": "tsc src/index.ts"
     },
     "author": "Bartosz Karpiel",
     "license": "MIT",

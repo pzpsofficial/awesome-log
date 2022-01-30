@@ -140,3 +140,6 @@ dist
 
 # Playground
 playground/
+
+# JS build files
+**/*.js
