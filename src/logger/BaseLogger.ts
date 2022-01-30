@@ -44,12 +44,23 @@ export class BaseLogger {
         headingStyles: Styles = BaseHeadingStyles
     ) {
         const dataType = this.resolveDataType(data);
+
+        if (dataType === 'unknown') {
+            this.error('Sorry, but data type you provided is not supported!');
+        }
+
         if (heading) {
             console.log(`%c${heading}`, this.resolveStyles(headingStyles));
         }
 
         if (dataType === 'array' || dataType === 'object') {
             console.log(`%c${JSON.stringify(data, undefined, 4)}`, this.resolveStyles(styles));
+        } else if (dataType === 'formData') {
+            const formattedFormData = this.formatFormData(data as unknown as FormData);
+            console.log(
+                `%c${JSON.stringify(formattedFormData, undefined, 4)}`,
+                this.resolveStyles(styles)
+            );
         } else {
             console.log(`%c${data}`, this.resolveStyles(styles));
         }
@@ -65,6 +76,14 @@ export class BaseLogger {
         }
 
         return styles;
+    }
+
+    private formatFormData(data: FormData) {
+        const objToReturn: { [key: string]: any } = {};
+        for (const [key, value] of data.entries()) {
+            objToReturn[key] = value;
+        }
+        return objToReturn;
     }
 
     private greet(): void {

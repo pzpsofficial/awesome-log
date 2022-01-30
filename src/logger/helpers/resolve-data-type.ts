@@ -40,6 +40,10 @@ export const resolveDataType = <T>(data: T): AvailableTypes => {
                 return 'primitive';
             }
 
+            if (data instanceof FormData) {
+                return 'formData';
+            }
+
             return 'object';
 
             break;

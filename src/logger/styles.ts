@@ -52,6 +52,7 @@ export const GreetStyle: Styles = [
     'background-size: cover',
     'font-size: 16px',
     'text-shadow: 2px 2px 2px #000',
+    'text-align: center',
 ];
 
 export const LogStyle: Styles = [...BaseStyles];
