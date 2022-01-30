@@ -2,7 +2,17 @@ export type Config = {
     name: string;
     organization: string;
     componentName: string;
+    showGreet: boolean;
 };
+
+export type AvailableTypes =
+    | 'primitive'
+    | 'function'
+    | 'object'
+    | 'formData'
+    | 'object'
+    | 'array'
+    | 'unknown';
 
 export type OnMounted = () => void;
 

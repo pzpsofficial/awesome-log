@@ -2,13 +2,11 @@ import { Styles } from './types';
 
 export const BaseStyles: Styles = [
     'color: white',
-    'padding: 8px',
+    'padding: 4px',
     'font-family: "Courier New", monospace;',
     'font-weight: regular',
     'font-size: 13px',
     'background-color: #2B2B2B',
-    'border-radius: 5px',
-    'margin-bottom: 5px',
 ];
 
 export const BaseHeadingStyles: Styles = [

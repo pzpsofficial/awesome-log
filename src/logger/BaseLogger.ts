@@ -1,3 +1,4 @@
+import { resolveDataType } from './helpers/resolve-data-type';
 import {
     BaseHeadingStyles,
     ErrorHeadingStyle,
@@ -9,15 +10,14 @@ import {
     WarningHeadingStyle,
     WarnStyle,
 } from './styles';
-import { BaseHeading, Config, LifecycleHooks, Styles } from './types';
+import { AvailableTypes, BaseHeading, Config, LifecycleHooks, Styles } from './types';
 
 export class BaseLogger {
-    static hasGreeted = false;
-
     private readonly config: Config = {
         name: '',
         organization: '',
         componentName: '',
+        showGreet: true,
     };
 
     constructor(data?: Config, hooks?: LifecycleHooks) {
@@ -32,7 +32,9 @@ export class BaseLogger {
     }
 
     protected onMounted() {
-        this.greet();
+        if (this.config.showGreet) {
+            this.greet();
+        }
     }
 
     private baseLog<T>(
@@ -41,14 +43,20 @@ export class BaseLogger {
         heading?: string,
         headingStyles: Styles = BaseHeadingStyles
     ) {
+        const dataType = this.resolveDataType(data);
         if (heading) {
             console.log(`%c${heading}`, this.resolveStyles(headingStyles));
         }
-        console.log(`%c${data}`, this.resolveStyles(styles));
+
+        if (dataType === 'array' || dataType === 'object') {
+            console.log(`%c${JSON.stringify(data, undefined, 4)}`, this.resolveStyles(styles));
+        } else {
+            console.log(`%c${data}`, this.resolveStyles(styles));
+        }
     }
 
-    private resolveDataType<T>(data: T) {
-        console.log('Siema');
+    private resolveDataType<T>(data: T): AvailableTypes {
+        return resolveDataType(data);
     }
 
     private resolveStyles(styles: Styles): string {
@@ -57,10 +65,6 @@ export class BaseLogger {
         }
 
         return styles;
-    }
-
-    private get getConsoleWidth() {
-        return window.screen.availWidth - document.body.clientWidth;
     }
 
     private greet(): void {
