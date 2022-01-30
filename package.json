@@ -1,6 +1,6 @@
 {
     "name": "bk-awesome-log",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Fall in love with your console",
     "main": "dist/index.js",
     "directories": {
@@ -16,6 +16,10 @@
     },
     "author": "Bartosz Karpiel",
     "license": "MIT",
+    "keywords": [
+        "javascript",
+        "console.log"
+    ],
     "devDependencies": {
         "@commitlint/cli": "^16.1.0",
         "@commitlint/config-conventional": "^16.0.0",
