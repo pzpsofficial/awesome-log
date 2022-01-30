@@ -1,7 +1,6 @@
 import { AvailableTypes } from 'logger';
 
 export const resolveDataType = <T>(data: T): AvailableTypes => {
-    const type = typeof data;
     switch (typeof data) {
         case 'bigint':
             return 'primitive';

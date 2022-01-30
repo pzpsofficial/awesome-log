@@ -79,7 +79,7 @@ export class BaseLogger {
     }
 
     private formatFormData(data: FormData) {
-        const objToReturn: { [key: string]: any } = {};
+        const objToReturn: { [key: string]: unknown } = {};
         for (const [key, value] of data.entries()) {
             objToReturn[key] = value;
         }
