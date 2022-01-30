@@ -11,7 +11,8 @@
         "eslint": "npx eslint src --fix",
         "stylelint": "stylelint src/**/*.scss --fix",
         "test": "echo \"No test specified\"",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "build": "tsc src/index.ts --outDir dist"
     },
     "author": "Bartosz Karpiel",
     "license": "MIT",

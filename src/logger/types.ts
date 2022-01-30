@@ -23,3 +23,7 @@ export type LifecycleHooks = {
 export type Styles = string | string[];
 
 export type BaseHeading = 'Hello' | 'Info' | 'Warning' | 'Error' | string;
+
+export interface FormData {
+    entries(): [[string, unknown]];
+}

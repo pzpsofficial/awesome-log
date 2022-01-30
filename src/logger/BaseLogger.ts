@@ -10,7 +10,7 @@ import {
     WarningHeadingStyle,
     WarnStyle,
 } from './styles';
-import { AvailableTypes, BaseHeading, Config, LifecycleHooks, Styles } from './types';
+import { AvailableTypes, BaseHeading, Config, LifecycleHooks, Styles, FormData } from './types';
 
 export class BaseLogger {
     private readonly config: Config = {

@@ -5,3 +5,4 @@
 .stylelintrc.json
 commitlint.config.js
 tsconfig.json
+src/

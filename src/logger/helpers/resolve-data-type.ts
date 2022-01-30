@@ -1,4 +1,4 @@
-import { AvailableTypes } from 'logger';
+import { AvailableTypes } from '../types';
 
 export const resolveDataType = <T>(data: T): AvailableTypes => {
     switch (typeof data) {
