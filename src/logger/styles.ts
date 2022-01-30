@@ -55,8 +55,8 @@ export const GreetStyle: Styles = [
     'text-align: center',
 ];
 
-export const LogStyle: Styles = [...BaseStyles];
+export const LogStyle: Styles = [...BaseStyles, 'border-left: 2px solid blue'];
 
-export const WarnStyle: Styles = [...BaseStyles];
+export const WarnStyle: Styles = [...BaseStyles, 'border-left: 2px solid darkgoldenrot'];
 
-export const ErrorStyle: Styles = [...BaseStyles];
+export const ErrorStyle: Styles = [...BaseStyles, 'border-left: 2px solid maroon'];
