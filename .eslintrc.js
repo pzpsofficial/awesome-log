@@ -15,4 +15,5 @@ module.exports = {
         semi: ['error', 'always'],
         quotes: ['warn', 'single'],
     },
+    ignorePatterns: ['*/js', '**/*.js'],
 };
