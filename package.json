@@ -1,6 +1,6 @@
 {
     "name": "bk-awesome-log",
-    "version": "1.0.7",
+    "version": "2.0.0",
     "description": "Fall in love with your console",
     "main": "src/index.js",
     "types": "src/index.d.ts",
