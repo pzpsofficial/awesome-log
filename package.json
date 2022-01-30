@@ -10,7 +10,7 @@
         "lint": "npm run eslint && npm run stylelint",
         "eslint": "npx eslint src --fix",
         "stylelint": "stylelint src/**/*.scss --fix",
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "echo \"No test specified\"",
         "prepare": "husky install"
     },
     "author": "Bartosz Karpiel",
