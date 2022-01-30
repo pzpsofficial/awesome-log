@@ -1,8 +1,8 @@
 {
-    "name": "awesome-log",
-    "version": "1.0.0",
+    "name": "bk-awesome-log",
+    "version": "1.0.1",
     "description": "Fall in love with your console",
-    "main": "index.js",
+    "main": "dist/index.js",
     "directories": {
         "doc": "docs"
     },

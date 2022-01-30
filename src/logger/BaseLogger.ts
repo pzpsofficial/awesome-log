@@ -17,7 +17,7 @@ export class BaseLogger {
         name: '',
         organization: '',
         componentName: '',
-        showGreet: true,
+        showGreet: false,
     };
 
     constructor(data?: Config, hooks?: LifecycleHooks) {

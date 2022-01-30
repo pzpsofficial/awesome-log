@@ -6,3 +6,4 @@
 commitlint.config.js
 tsconfig.json
 src/
+playground/
