@@ -1,0 +1,11 @@
+import { Styles } from './types';
+export declare const BaseStyles: Styles;
+export declare const BaseHeadingStyles: Styles;
+export declare const GreetHeadingStyle: Styles;
+export declare const LogHeadingStyle: Styles;
+export declare const WarningHeadingStyle: Styles;
+export declare const ErrorHeadingStyle: Styles;
+export declare const GreetStyle: Styles;
+export declare const LogStyle: Styles;
+export declare const WarnStyle: Styles;
+export declare const ErrorStyle: Styles;
