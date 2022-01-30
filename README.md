@@ -15,7 +15,7 @@ As this package is really simple here is quick referrence how to use it in your 
 
 -   Installation
     ```BASH
-    npm install awesome-log
+    npm install bk-awesome-log
     ```
 -   Usage
 
