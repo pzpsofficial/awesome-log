@@ -8,7 +8,7 @@
         "doc": "docs"
     },
     "scripts": {
-        "lint": "npm run eslint && npm run stylelint",
+        "lint": "npm run eslint nt && npm run stylelint",
         "eslint": "npx eslint src --fix",
         "stylelint": "stylelint src/**/*.scss --fix",
         "test": "echo \"No test specified\"",
